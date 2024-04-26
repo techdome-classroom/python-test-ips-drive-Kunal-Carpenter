@@ -6,3 +6,16 @@ def smallest_missing_positive_integer(nums: List[int]) -> int:
 
     """
     pass
+def smallest_missing_positive_integer(nums):
+    n = len(nums)
+    present = [False] * (n + 1)
+
+    for num in nums:
+        if 0 < num <= n:
+            present[num] = True
+
+    for i in range(1, n + 1):
+        if not present[i]:
+            return i
+
+    return n + 1
