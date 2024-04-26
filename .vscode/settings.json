@@ -1,0 +1,37 @@
+{
+  "python.testing.pytestArgs": [],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.analysis.extraPaths": [
+      "./tests/unit_test_helper"
+  ],
+  "python.linting.pylintArgs": [
+      "--disable=C0111"
+  ],
+  "emeraldwalk.runonsave": {
+      "autoClearConsole": true,
+      "commands": [
+          {
+            "match": "program1.py",
+                "cmd": "git add . && git commit -m \"Auto commit on save\" && git push origin main && python \"${workspaceFolder}\\test1.py\" \"${workspaceFolder}\\program1.py\"",
+                
+          },
+          {
+            "match": "program2.py",
+                "cmd": "git add . && git commit -m \"Auto commit on save\" && git push origin main && python \"${workspaceFolder}\\test2.py\" \"${workspaceFolder}\\program2.py\"",
+                
+          },
+          {
+            "match": "program3.py",
+                "cmd": "git add . && git commit -m \"Auto commit on save\" && git push origin main && python \"${workspaceFolder}\\test3.py\" \"${workspaceFolder}\\program3.py\"",
+                
+          },
+          // {
+          //     "match": "program1.py",
+          //     "cmd": "${fileDirname}\\..\\..\\.venv\\Scripts\\activate.bat && python ${fileDirname}\\..\\..\\test1.py ${file}",
+          // }
+      ]
+  },
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 3000
+}
